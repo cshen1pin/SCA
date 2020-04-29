@@ -1,0 +1,25 @@
+# SCA
+  
+1, Install ubuntu 16.04 on your host machine. Restart your computer and go to your BIOS Setup turn off secure boot option.
+2, Install Nvidia-driver 410 on your host machine. After installation, restart computer and type $nvidia-smi in command line.
+3, Install Jetpack 4.3 (https://developer.nvidia.com/embedded/jetpack) using SDK Manager
+4, Flash your Jetson TX2 Following the step in SDK Manager
+5, Install Digits on your host machine. Follow the step in https://github.com/dusty-nv/jetson-inference/blob/master/docs/digits-setup.md
+6, Now go to your Jetson Tx2. Open the terminal and type following command.
+$ sudo apt-get update
+$ sudo apt-get install git cmake libpython3-dev python3-numpy
+$ git clone --recursive https://github.com/dusty-nv/jetson-inference
+$ cd jetson-inference
+$ mkdir build
+$ cd build
+$ cmake ../
+$ make -j$(nproc)
+$ sudo make install
+$ sudo ldconfig
+7, Now go to your host machine. Remember to install docker (https://docs.docker.com/engine/install/ubuntu/). After you install docker. Start digits.
+8, Open your web browser and go to localhost:8888
+9, select new dataset imageclassification and choose the images you want to classify. Rmember that the image you choose to classify must be under /home/username/data folder
+10, Click models and new model image classification. Select the dataset you just build and traint the model.
+11,Download you model. And deploy it on Jetson TX2. (https://github.com/dusty-nv/jetson-inference/blob/master/docs/imagenet-custom.md)
+
+For more detail information, please check out https://github.com/dusty-nv/jetson-inference Twodays to a demo(digits)
