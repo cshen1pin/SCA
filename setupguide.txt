@@ -19,5 +19,8 @@ $ sudo ldconfig
 9, select new dataset imageclassification and choose the images you want to classify. Rmember that the image you choose to classify must be under /home/username/data folder
 10, Click models and new model image classification. Select the dataset you just build and traint the model.
 11,Download you model. And deploy it on Jetson TX2. (https://github.com/dusty-nv/jetson-inference/blob/master/docs/imagenet-custom.md)
-
+12,Go to Jetson TX2 extract your model to ~/network
+13, now go to ~/jetson-inference/build/aarch64/bin
+14, copy my runcamera.sh to ~/jetson-inference/build/aarch64/bin
+15, now run ./runcamera.sh
 For more detail information, please check out https://github.com/dusty-nv/jetson-inference Twodays to a demo(digits)
